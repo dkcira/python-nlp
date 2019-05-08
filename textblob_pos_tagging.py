@@ -17,14 +17,8 @@ document = ('In computer science, artificial intelligence (AI), '\
 # create a textblob object with the TextBlob class
 text_blob_object = TextBlob(document)
 
-# tokenize sentences using the attribute
-document_sentences = text_blob_object.sentences
-print('tokenized sentences')
-print(document_sentences)
-print(len(document_sentences))
+# list of parts of speech tags:
+# https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
 
-# tokenize words
-document_words = text_blob_object.words
-print('tokenized words')
-print(document_words)
-print(len(document_words))
+for word, pos in text_blob_object.tags:
+    print(word + " => " + pos)
